@@ -2,11 +2,10 @@ from pymongo import MongoClient
 from datetime import datetime
 from termcolor import colored
 
-cluster = MongoClient("mongodb+srv://jesusotteson:Rynso8-ducwaf-xincot@adventuresguildcluster.knwxl.mongodb.net"
+cluster = MongoClient("mongodb+srv://jesusotteson:Rynso8-ducwaf-xincot@securechatcluster.xwil4.mongodb.net"
                       "/myFirstDatabase?retryWrites=true&w=majority")
-db = cluster["AdventurersGuildDB"]["AdventuresGuildCollection"]
+db = cluster["SecureChatDB"]["SecureChatCollection"]
 all = db.find({})
-
 date = datetime.now().strftime("%x")
 
 for messages in all:
@@ -23,8 +22,7 @@ for messages in all:
 
 person = input("Name: ")
 message = input("Message: ")
-
-time = datetime.now().strftime("%x")
+time = datetime.now().strftime("%X")
 msg = {"id": person, "message": message, "date": date, "time": time}
 print(msg)
 
